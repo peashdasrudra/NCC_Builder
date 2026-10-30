@@ -2945,10 +2945,47 @@ h1, h2, h3, h4, h5, h6 {
 
     .finder-form {
         grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .finder-field-status {
+        grid-column: 1 / -1;
+        width: 100%;
+        max-width: 340px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .finder-field-status label {
+        text-align: center;
+        display: block;
+        color: var(--gold-bright);
+        font-weight: 700;
+        letter-spacing: 1.2px;
+        margin-bottom: 6px;
+        text-shadow: 0 0 10px rgba(212, 175, 55, 0.25);
+    }
+
+    .finder-field-status .finder-select {
+        text-align: center;
+        text-align-last: center;
+        background: rgba(8, 18, 34, 0.9);
+        border: 1.5px solid rgba(212, 175, 55, 0.45);
+        box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4), 0 0 16px rgba(212, 175, 55, 0.15);
+        font-weight: 600;
+        color: var(--white);
+        border-radius: var(--radius-sm);
+        height: 46px;
+        transition: all 0.3s ease;
+    }
+
+    .finder-field-status .finder-select:focus {
+        border-color: var(--gold-bright);
+        box-shadow: 0 0 22px rgba(212, 175, 55, 0.4);
     }
 
     .finder-btn {
-        grid-column: span 2;
+        grid-column: 1 / -1;
         margin-top: 4px;
     }
 }
@@ -3296,16 +3333,57 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .finder-form {
-        grid-template-columns: 1fr;
-        gap: 10px;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px 10px;
+    }
+
+    .finder-field-status {
+        grid-column: 1 / -1;
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .finder-field-status label {
+        text-align: center;
+        display: block;
+        color: var(--gold-bright);
+        font-weight: 700;
+        letter-spacing: 1.2px;
+        margin-bottom: 5px;
+        text-shadow: 0 0 10px rgba(212, 175, 55, 0.25);
+    }
+
+    .finder-field-status .finder-select {
+        text-align: center;
+        text-align-last: center;
+        background: rgba(8, 18, 34, 0.92);
+        border: 1.5px solid rgba(212, 175, 55, 0.5);
+        box-shadow: 0 4px 18px rgba(0, 0, 0, 0.45), 0 0 18px rgba(212, 175, 55, 0.2);
+        font-weight: 600;
+        color: var(--white);
+        border-radius: var(--radius-sm);
+        height: 46px;
+        font-size: 15px;
+        transition: all 0.3s ease;
+    }
+
+    .finder-field-status .finder-select:focus {
+        border-color: var(--gold-bright);
+        box-shadow: 0 0 24px rgba(212, 175, 55, 0.45);
     }
 
     .finder-select {
         height: 46px;
-        font-size: 16px;
+        font-size: 14px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
     }
 
     .finder-btn {
+        grid-column: 1 / -1;
         width: 100%;
         justify-content: center;
         height: 46px;
