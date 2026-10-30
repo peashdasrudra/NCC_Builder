@@ -71,17 +71,19 @@
     setTimeout(dismissPreloader, 1200);
 
     /* ===================== NAVBAR & STICKY SCROLL ===================== */
+    const siteHeader = document.getElementById('site-header');
     const navbar = document.getElementById('navbar');
     const navHamburger = document.getElementById('nav-hamburger');
     const navMenu = document.getElementById('nav-menu');
     const navLinks = document.querySelectorAll('.nav-link');
 
     function handleNavScroll() {
-        if (!navbar) return;
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
+        const isScrolled = window.scrollY > 35;
+        if (siteHeader) {
+            siteHeader.classList.toggle('scrolled', isScrolled);
+        }
+        if (navbar) {
+            navbar.classList.toggle('scrolled', isScrolled);
         }
     }
 
