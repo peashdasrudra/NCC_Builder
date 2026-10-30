@@ -261,7 +261,27 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--navy-deep);
     font-weight: 700;
     box-shadow: 0 6px 24px rgba(212, 175, 55, 0.35);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-gold::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 35%;
+    height: 200%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+    transform: rotate(25deg);
+    animation: btnLightSweep 4.5s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes btnLightSweep {
+    0%, 65% { transform: translateX(-180%) rotate(25deg); }
+    85%, 100% { transform: translateX(520%) rotate(25deg); }
 }
 
 .btn-gold:hover {
@@ -912,11 +932,19 @@ h1, h2, h3, h4, h5, h6 {
 
 .hero-title-accent {
     font-style: italic;
-    background: var(--gold-foil);
+    background: linear-gradient(135deg, #fff2a3 0%, #ffd700 25%, #dfb746 55%, #fff8db 80%, #ffd700 100%);
+    background-size: 200% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    text-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+    text-shadow: 0 0 35px rgba(212, 175, 55, 0.4);
+    animation: goldShine 7s linear infinite;
+}
+
+@keyframes goldShine {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 .hero-description {
@@ -996,7 +1024,7 @@ h1, h2, h3, h4, h5, h6 {
     border: 1px solid rgba(212, 175, 55, 0.3);
     border-radius: var(--radius-lg);
     padding: 20px 24px;
-    margin: 0 auto 48px;
+    margin: 0 auto;
     max-width: 880px;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(212, 175, 55, 0.1);
 }
@@ -1072,7 +1100,7 @@ h1, h2, h3, h4, h5, h6 {
     border: var(--border-gold-subtle);
     border-radius: var(--radius-xl);
     max-width: 900px;
-    margin: 0 auto;
+    margin: 0 auto 36px;
     box-shadow: var(--shadow-md);
 }
 
@@ -3290,46 +3318,53 @@ h1, h2, h3, h4, h5, h6 {
         height: 42px;
     }
 
-    /* Hero Mobile Adjustments — Perfectly Balanced Viewport */
+    /* Hero Mobile Adjustments — Ultra-Clean Minimal Luxury Landing */
     .hero {
         min-height: auto;
-        padding: 24px 0 20px;
+        padding: 24px 0 24px;
     }
 
     .hero-badge {
-        font-size: 0.68rem;
-        padding: 6px 14px;
-        margin-bottom: 12px;
+        font-size: 0.72rem;
+        padding: 7px 16px;
+        margin-bottom: 14px;
         white-space: nowrap;
-        letter-spacing: 1px;
+        letter-spacing: 1.2px;
+        background: rgba(10, 22, 40, 0.78);
+        border: 1px solid rgba(212, 175, 55, 0.42);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(212, 175, 55, 0.15);
     }
 
     .hero-title {
-        font-size: clamp(2.0rem, 7vw, 2.6rem);
+        font-size: clamp(2.15rem, 7.5vw, 2.75rem);
         line-height: 1.12;
-        letter-spacing: -0.02em;
-        margin-bottom: 10px;
+        letter-spacing: -0.025em;
+        margin-bottom: 12px;
     }
 
     .hero-description {
-        font-size: 0.86rem;
-        line-height: 1.5;
-        margin: 0 auto 16px;
+        font-size: 0.88rem;
+        line-height: 1.55;
+        margin: 0 auto 18px;
         max-width: 92%;
+        color: rgba(225, 235, 248, 0.82);
     }
 
     .hero-cta {
         flex-direction: column;
         width: 100%;
-        gap: 8px;
-        margin-bottom: 18px;
+        gap: 10px;
+        margin-bottom: 22px;
     }
 
     .hero-cta > .btn-gold {
         width: 100%;
         justify-content: center;
-        padding: 12px 18px;
-        font-size: 0.92rem;
+        padding: 13px 18px;
+        font-size: 0.94rem;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        box-shadow: 0 8px 25px rgba(212, 175, 55, 0.35), 0 2px 10px rgba(0, 0, 0, 0.5);
     }
 
     .hero-cta-row {
@@ -3343,28 +3378,88 @@ h1, h2, h3, h4, h5, h6 {
     .hero-cta-row .btn-outline-gold {
         width: 100%;
         justify-content: center;
-        padding: 10px 8px;
-        font-size: 0.8rem;
+        padding: 11px 8px;
+        font-size: 0.82rem;
+        font-weight: 600;
         white-space: nowrap;
         gap: 6px;
+        border-radius: 50px;
+        background: rgba(12, 24, 44, 0.72);
+        border: 1.2px solid rgba(212, 175, 55, 0.45);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
     }
 
     .hero-cta-row .btn-vip-tour .vip-spark-icon {
-        font-size: 0.88rem;
+        font-size: 0.9rem;
     }
 
-    /* Finder on Mobile — Perfectly Contained Above Dock */
+    /* Hero Stats in a clean 2x2 grid (Positioned Directly Below Hero CTA) */
+    .hero-stats {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 10px !important;
+        padding: 14px 12px !important;
+        width: 100% !important;
+        margin: 0 auto 24px !important;
+        box-sizing: border-box !important;
+        background: rgba(10, 22, 40, 0.75) !important;
+        backdrop-filter: blur(18px) !important;
+        -webkit-backdrop-filter: blur(18px) !important;
+        border: 1px solid rgba(212, 175, 55, 0.28) !important;
+        border-radius: var(--radius-md) !important;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(212, 175, 55, 0.08) !important;
+    }
+
+    .hero-stat-divider {
+        display: none !important;
+    }
+
+    .hero-stat {
+        background: rgba(14, 28, 48, 0.65);
+        border: 1px solid rgba(212, 175, 55, 0.2);
+        border-radius: var(--radius-sm);
+        padding: 12px 10px;
+        gap: 10px !important;
+        align-items: center;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    }
+
+    .hero-stat-icon {
+        width: 40px !important;
+        height: 40px !important;
+        border-radius: 11px !important;
+    }
+
+    .hero-stat-icon svg {
+        width: 19px !important;
+        height: 19px !important;
+    }
+
+    .hero-stat-value {
+        font-size: 1.5rem !important;
+    }
+
+    .hero-stat-label {
+        font-size: 0.7rem !important;
+        letter-spacing: 0.4px !important;
+    }
+
+    /* Finder on Mobile — Positioned Below The 4 Cards */
     .hero-finder-widget {
-        padding: 14px 12px 14px;
-        margin-bottom: 20px;
+        padding: 16px 14px 16px;
+        margin: 0 auto 24px;
         border-radius: var(--radius-md);
         background: rgba(10, 22, 40, 0.94);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 25px rgba(212, 175, 55, 0.1);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(212, 175, 55, 0.32);
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.55), 0 0 25px rgba(212, 175, 55, 0.1);
     }
 
     .finder-header {
         font-size: 0.72rem;
-        margin-bottom: 10px;
+        margin-bottom: 12px;
         letter-spacing: 1.2px;
     }
 
@@ -3428,49 +3523,6 @@ h1, h2, h3, h4, h5, h6 {
         margin-top: 2px;
         font-size: 0.9rem;
         padding: 10px 18px;
-    }
-
-    /* Hero Stats in a clean 2x2 grid */
-    .hero-stats {
-        display: grid !important;
-        grid-template-columns: 1fr 1fr !important;
-        gap: 10px !important;
-        padding: 12px 10px !important;
-        width: 100% !important;
-        margin: 0 auto !important;
-        box-sizing: border-box !important;
-    }
-
-    .hero-stat-divider {
-        display: none !important;
-    }
-
-    .hero-stat {
-        background: rgba(15, 30, 52, 0.65);
-        border: 1px solid rgba(212, 175, 55, 0.2);
-        border-radius: var(--radius-sm);
-        padding: 12px 10px;
-        gap: 10px !important;
-        align-items: center;
-    }
-
-    .hero-stat-icon {
-        width: 38px !important;
-        height: 38px !important;
-        border-radius: 10px !important;
-    }
-
-    .hero-stat-icon svg {
-        width: 18px !important;
-        height: 18px !important;
-    }
-
-    .hero-stat-value {
-        font-size: 1.45rem !important;
-    }
-
-    .hero-stat-label {
-        font-size: 0.68rem !important;
     }
 
     /* About on Mobile */
