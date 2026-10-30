@@ -937,6 +937,10 @@ h1, h2, h3, h4, h5, h6 {
     flex-wrap: wrap;
 }
 
+.hero-cta-row {
+    display: contents;
+}
+
 /* VIP Tour & Interactive Blueprint CTA Button */
 .btn-vip-tour {
     display: inline-flex;
@@ -3286,55 +3290,87 @@ h1, h2, h3, h4, h5, h6 {
         height: 42px;
     }
 
-    /* Hero Mobile Adjustments */
+    /* Hero Mobile Adjustments — Perfectly Balanced Viewport */
     .hero {
         min-height: auto;
-        padding: 40px 0 36px;
+        padding: 24px 0 20px;
     }
 
     .hero-badge {
-        font-size: 0.72rem;
-        padding: 8px 18px;
-        margin-bottom: 16px;
+        font-size: 0.68rem;
+        padding: 6px 14px;
+        margin-bottom: 12px;
+        white-space: nowrap;
+        letter-spacing: 1px;
     }
 
     .hero-title {
-        font-size: clamp(2.1rem, 7.5vw, 3.0rem);
-        line-height: 1.15;
+        font-size: clamp(2.0rem, 7vw, 2.6rem);
+        line-height: 1.12;
         letter-spacing: -0.02em;
-        margin-bottom: 16px;
+        margin-bottom: 10px;
     }
 
     .hero-description {
-        font-size: 0.95rem;
-        line-height: 1.65;
-        margin-bottom: 24px;
+        font-size: 0.86rem;
+        line-height: 1.5;
+        margin: 0 auto 16px;
+        max-width: 92%;
     }
 
     .hero-cta {
         flex-direction: column;
         width: 100%;
-        gap: 12px;
-        margin-bottom: 28px;
+        gap: 8px;
+        margin-bottom: 18px;
     }
 
-    .hero-cta .btn {
+    .hero-cta > .btn-gold {
         width: 100%;
         justify-content: center;
-        padding: 14px 22px;
+        padding: 12px 18px;
+        font-size: 0.92rem;
     }
 
-    /* Finder on Mobile */
+    .hero-cta-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        width: 100%;
+    }
+
+    .hero-cta-row .btn-vip-tour,
+    .hero-cta-row .btn-outline-gold {
+        width: 100%;
+        justify-content: center;
+        padding: 10px 8px;
+        font-size: 0.8rem;
+        white-space: nowrap;
+        gap: 6px;
+    }
+
+    .hero-cta-row .btn-vip-tour .vip-spark-icon {
+        font-size: 0.88rem;
+    }
+
+    /* Finder on Mobile — Perfectly Contained Above Dock */
     .hero-finder-widget {
-        padding: 16px 14px;
-        margin-bottom: 24px;
+        padding: 14px 12px 14px;
+        margin-bottom: 20px;
         border-radius: var(--radius-md);
-        background: rgba(10, 22, 40, 0.92);
+        background: rgba(10, 22, 40, 0.94);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 25px rgba(212, 175, 55, 0.1);
+    }
+
+    .finder-header {
+        font-size: 0.72rem;
+        margin-bottom: 10px;
+        letter-spacing: 1.2px;
     }
 
     .finder-form {
         grid-template-columns: 1fr 1fr;
-        gap: 12px 10px;
+        gap: 10px 8px;
     }
 
     .finder-field-status {
@@ -3351,7 +3387,8 @@ h1, h2, h3, h4, h5, h6 {
         color: var(--gold-bright);
         font-weight: 700;
         letter-spacing: 1.2px;
-        margin-bottom: 5px;
+        margin-bottom: 4px;
+        font-size: 0.68rem;
         text-shadow: 0 0 10px rgba(212, 175, 55, 0.25);
     }
 
@@ -3364,8 +3401,8 @@ h1, h2, h3, h4, h5, h6 {
         font-weight: 600;
         color: var(--white);
         border-radius: var(--radius-sm);
-        height: 46px;
-        font-size: 15px;
+        height: 42px;
+        font-size: 14px;
         transition: all 0.3s ease;
     }
 
@@ -3375,19 +3412,22 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .finder-select {
-        height: 46px;
-        font-size: 14px;
+        height: 42px;
+        font-size: 13.5px;
         text-overflow: ellipsis;
         overflow: hidden;
         white-space: nowrap;
+        padding: 8px 10px;
     }
 
     .finder-btn {
         grid-column: 1 / -1;
         width: 100%;
         justify-content: center;
-        height: 46px;
-        margin-top: 4px;
+        height: 42px;
+        margin-top: 2px;
+        font-size: 0.9rem;
+        padding: 10px 18px;
     }
 
     /* Hero Stats in a clean 2x2 grid */
